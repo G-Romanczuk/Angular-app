@@ -22,9 +22,6 @@ export class TaskListComponent {
   allTasks!: Task[] 
   functionalities : Functionality[] = []
   tasksBelongsToFunctionality: Task[] = []
-  tasksToDo: Task[] = []
-  tasksDoing: Task[] = []
-  tasksDone: Task[] = []
   workingUsers!: "Gabi";
   functionalityID!: string
   isLoading: boolean = false;
@@ -59,32 +56,10 @@ export class TaskListComponent {
        this.getFunctionalityTasks()
        this.getSingleFunctionality(this.functionalityID)
   
-       this.saveTaskToItsCategory()
-       this.checkStatusDoing(this.functionality)
-       this.checkStatusDone(this.functionality)
- 
      });
    }
  
-   checkStatusDoing(functionality : Functionality)
-   {
-     const checkIfAnyIsDoing = this.tasksBelongsToFunctionality.find(f=>f.kanban === Kanban.Doing )
  
-     if(checkIfAnyIsDoing){
-       functionality.kanban = Kanban.Doing
-       this.functionalityService.updateFunctionality(functionality)
-     }
-   }
- 
-   checkStatusDone(functionality : Functionality)
-   { 
-     const checkIfAnyIsDoing = this.tasksBelongsToFunctionality.find(f=>f.kanban === Kanban.Done )
- 
-     if(checkIfAnyIsDoing){
-       functionality.kanban = Kanban.Done
-       this.functionalityService.updateFunctionality(functionality)
-     }
-   }
    createTask()
    {
      this.router.navigate(['/task/create'])
@@ -117,23 +92,7 @@ export class TaskListComponent {
      console.log(this.tasksBelongsToFunctionality)
    }
  
-   saveTaskToItsCategory()
-   {
-     this.tasksBelongsToFunctionality.forEach(task=>{
-       if(task.kanban ==="ToDo")
-       {
-         this.tasksToDo.push(task);
-       }
-       else if(task.kanban ==="Doing")
-       {
-         this.tasksDoing.push(task);
-       }
-       else if(task.kanban ==="Done")
-       {
-         this.tasksDone.push(task);
-       }
-     })
-   }
+  
  
    editTask(task:Task){
     this.router.navigate(['/task', task.ID, 'edit']);
@@ -154,9 +113,5 @@ export class TaskListComponent {
     this.router.navigate(['/task', task.ID, 'read']);
   }
  
-
-
-   
-   
  }
  

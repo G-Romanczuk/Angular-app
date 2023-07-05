@@ -1,6 +1,8 @@
 <router-outlet></router-outlet>
 <h2>Lista funkcjonalności</h2>
-
+<button color="primary" (click)="createFunctionality()">
+  Utwórz funkcjonalność
+</button>
 <table
   mat-table
   [dataSource]="sortedData"
@@ -37,6 +39,4 @@
   <tr mat-row *matRowDef="let functionality; columns: displayedColumns"></tr>
 </table>
 
-<button color="primary" (click)="createFunctionality()">
-  Utwórz funkcjonalność
-</button>
+
