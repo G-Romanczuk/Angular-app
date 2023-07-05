@@ -1,5 +1,6 @@
-<h2>Szczegóły funkcjonalności {{ functionality.name }}</h2>
+<h2 class="text-center">Szczegóły funkcjonalności:  {{ functionality.name }}</h2>
 
+<div class="table">
 <table mat-table [dataSource]="functionalities" class="mat-elevation-z8">
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef>Nazwa</th>
@@ -32,11 +33,17 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let functionality; columns: displayedColumns"></tr>
 </table>
+</div>
 
-<h3>Lista zadań przypisana do funkcjonalności</h3>
-<button mat-raised-button color="primary" (click)="createTask()">
+
+<h3 class="text-center">Lista zadań przypisana do funkcjonalności</h3>
+<div class="buttonC">
+<button mat-raised-button class="button" (click)="createTask()">
   Utwórz Nowe Zadanie
 </button>
+</div>
+
+<div class="table">
 <table mat-table [dataSource]="tasksBelongsToFunctionality" class="mat-elevation-z8">
   <ng-container matColumnDef="taskName">
     <th mat-header-cell *matHeaderCellDef>Nazwa</th>
@@ -72,5 +79,7 @@
   <tr mat-header-row *matHeaderRowDef="taskDisplayedColumns"></tr>
   <tr mat-row *matRowDef="let functionality; columns: taskDisplayedColumns"></tr>
 </table>
+
+</div>
 
 

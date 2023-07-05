@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { FunctionalityListComponent } from './functionality-list/functionality-list.component';
 import { FunctionalityCreateComponent } from './functionality-create/functionality-create.component';
 import { FunctionalityEditComponent } from './functionality-edit/functionality-edit.component';
-import { FunctionalityReadComponent } from './functionality-read/functionality-read.component';
 
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskReadComponent } from './task-read/task-read.component';
@@ -42,7 +41,6 @@ import { TaskService } from './services/task.service';
     FunctionalityListComponent,
     FunctionalityCreateComponent,
     FunctionalityEditComponent,
-    FunctionalityReadComponent,
     TaskListComponent,
     TaskReadComponent,
     TaskEditComponent,

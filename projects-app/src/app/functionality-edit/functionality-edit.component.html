@@ -1,5 +1,6 @@
-<h2>Edit Functionality {{ functionality.name }}</h2>
+<h2 class="text-center">Edit Functionality:  {{ functionality.name }}</h2>
 
+<div class="table">
 <form (ngSubmit)="onSubmit()" [formGroup]="editForm">
   <mat-form-field>
     <input
@@ -21,9 +22,11 @@
 
   <button
     mat-raised-button
-    color="primary"
     type="submit"
+    class="button"
   >
     Save
   </button>
 </form>
+
+</div>

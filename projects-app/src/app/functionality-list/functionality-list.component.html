@@ -1,12 +1,16 @@
 <router-outlet></router-outlet>
-<h2>Lista funkcjonalności</h2>
-<button color="primary" (click)="createFunctionality()">
+<h2 class="text-center">Lista funkcjonalności</h2>
+<div style="width: 80%; height: 2px; background-color: rgb(16, 15, 15, 0.2); margin: 10px auto;"></div>
+<div class="buttonC">
+<button class="button" (click)="createFunctionality()">
   Utwórz funkcjonalność
 </button>
+</div>
+<div class="table">
 <table
   mat-table
   [dataSource]="sortedData"
-  class="mat-elevation-z8"
+  class="mat-elevation-z8 "
 >
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef>Nazwa</th>
@@ -38,5 +42,6 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let functionality; columns: displayedColumns"></tr>
 </table>
+</div>
 
 

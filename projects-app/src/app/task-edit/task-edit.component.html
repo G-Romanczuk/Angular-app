@@ -1,5 +1,6 @@
-<h2>Edit Task {{ task.name }}</h2>
+<h2 class="text-center">Edit Task: {{ task.name }}</h2>
 
+<div class="table">
 <form (ngSubmit)="onSubmit()" [formGroup]="editForm">
   <mat-form-field>
     <input
@@ -21,9 +22,10 @@
 
   <button
     mat-raised-button
-    color="primary"
+    class="button"
     type="submit"
   >
     Save
   </button>
 </form>
+</div>
