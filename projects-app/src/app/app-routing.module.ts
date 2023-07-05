@@ -19,10 +19,10 @@ const routes: Routes = [
     path:"functionality/create",component:FunctionalityCreateComponent,
   },
   {
-    path: "functionality/edit", component: FunctionalityEditComponent,
+    path: "functionality/:id/edit", component: FunctionalityEditComponent,
    },
    {
-    path: "task/list", component: TaskListComponent,
+    path: "task/:id/list", component: TaskListComponent,
    },
   {
     path:"task/create",component:TaskCreateComponent,

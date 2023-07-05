@@ -73,7 +73,7 @@ export class FunctionalityListComponent {
     }
   
     editFunctionality(functionality:Functionality){
-      this.router.navigate(['/projects/list', functionality.ID, 'edit']);
+      this.router.navigate(['/functionality', functionality.ID, 'edit']);
     }
   
     deleteFunctionality(functionality:Functionality){
@@ -88,7 +88,7 @@ export class FunctionalityListComponent {
   
     viewFunctionalityDetails(functionality:Functionality)
     {
-      this.router.navigate(['/projects/list', functionality.ID, 'details']);
+      this.router.navigate(['/task', functionality.ID, 'list']);
     }
     createFunctionality() {
       // Przenieś się do komponentu tworzenia nowego projektu (np. CreateProjectComponent)
