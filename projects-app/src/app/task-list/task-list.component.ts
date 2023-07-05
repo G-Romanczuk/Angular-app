@@ -29,7 +29,10 @@ export class TaskListComponent {
   functionalityID!: string
   isLoading: boolean = false;
   displayedColumns: string[] = ['name', 'description', 'user' , 'kanban'];
- 
+ taskDisplayedColumns: string[] = ['taskName', 'taskKanban', 'taskAssignedUser', 'taskActions' ]
+
+
+
    constructor(private route: ActivatedRoute,
      private functionalityService: FunctionalityService,
      private router: Router,
@@ -132,13 +135,27 @@ export class TaskListComponent {
      })
    }
  
-   
+   editTask(task:Task){
+    this.router.navigate(['/task', task.ID, 'edit']);
+  }
+
+  deleteTask(task:Task){
+    
+      this.taskService.deleteTask(task.ID).subscribe(()=>{
+      
+        this.tasksBelongsToFunctionality = this.tasksBelongsToFunctionality.filter(f=>f.ID!==task.ID)
+      })
+    
+  
+  }
+
+  viewTaskDetails(task:Task)
+  {
+    this.router.navigate(['/task', task.ID, 'read']);
+  }
  
 
- 
-   goToTaskDetails(task:Task){
-     this.router.navigate(['/project/task', task.ID, 'details']);
-   }
+
    
    
  }

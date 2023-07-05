@@ -8,6 +8,7 @@ import { TaskListComponent } from './task-list/task-list.component';
 import { FunctionalityListComponent } from './functionality-list/functionality-list.component';
 import { TaskEditComponent } from './task-edit/task-edit.component';
 import { FunctionalityEditComponent } from './functionality-edit/functionality-edit.component';
+import { TaskReadComponent } from './task-read/task-read.component';
 
 
 
@@ -28,7 +29,10 @@ const routes: Routes = [
     path:"task/create",component:TaskCreateComponent,
   },
   {
-    path: "task/edit", component: TaskEditComponent,
+    path: "task/:id/edit", component: TaskEditComponent,
+   },
+   {
+    path: "task/:id/read", component: TaskReadComponent,
    },
 
 

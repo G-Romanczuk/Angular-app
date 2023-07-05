@@ -1,1 +1,39 @@
-<p>task-create works!</p>
+<form [formGroup]="taskForm" (ngSubmit)="createTask()">
+    <mat-form-field>
+      <mat-label>Nazwa</mat-label>
+      <input matInput formControlName="name" required />
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Funkcjonalność</mat-label>
+      <mat-select formControlName="functionality" required>
+        <mat-option *ngFor="let func of functionalityOptions" [value]="func">{{
+          func.name
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  
+    <mat-form-field>
+      <mat-label>Kanban</mat-label>
+      <mat-select formControlName="kanban" required>
+        <mat-option *ngFor="let kanban of enumValues" [value]="kanban">{{
+          kanban
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+  
+    <mat-form-field>
+      <mat-label>Przypisany użytkownik</mat-label>
+      <mat-select formControlName="assignedUser">
+        <mat-option></mat-option>
+        <mat-option *ngFor="let user of ownerOptions" [value]="user">{{
+          user
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit">Dodaj zadanie</button>
+  </form>
+  
