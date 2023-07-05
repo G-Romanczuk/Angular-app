@@ -56,7 +56,7 @@ export class FunctionalityService {
       functionalityToUpdate.name = functionality.name;
       functionalityToUpdate.description = functionality.description;
       functionalityToUpdate.project = functionality.project;
-      functionalityToUpdate.owner = functionality.owner;
+      functionalityToUpdate.user = functionality.user;
       functionalityToUpdate.kanban = functionality.kanban;
       this.saveFunctionalitiesToLocalStorage();
       return of(functionalityToUpdate);

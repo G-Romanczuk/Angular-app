@@ -14,6 +14,15 @@ import { TaskEditComponent } from './task-edit/task-edit.component';
 import { TaskDeleteComponent } from './task-delete/task-delete.component';
 import { TaskCreateComponent } from './task-create/task-create.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+
+import { FunctionalityService } from './services/functionality.service';
+import { TaskService } from './services/task.service';
 
 @NgModule({
   declarations: [
@@ -32,9 +41,10 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule, MatButtonModule, MatToolbarModule, MatIconModule, MatListModule
   ],
-  providers: [],
+  providers: [FunctionalityService, TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+
+ get user(): any {
+    return localStorage.getItem('User');
+}
+
+get project(): any {
+  return localStorage.getItem('Project');
+}
 }
