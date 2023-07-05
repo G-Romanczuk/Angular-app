@@ -22,7 +22,7 @@ export class TaskListComponent {
   allTasks!: Task[] 
   functionalities : Functionality[] = []
   tasksBelongsToFunctionality: Task[] = []
-  workingUsers!: "Gabi";
+  workingUsers= "Gabi";
   functionalityID!: string
   isLoading: boolean = false;
   displayedColumns: string[] = ['name', 'description', 'user' , 'kanban'];
